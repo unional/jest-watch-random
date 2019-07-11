@@ -30,7 +30,7 @@ add it to the `watchPlugins` section of the Jest configuration:
 
 In watch mode, press `R` to invoke a prompt and enter the percentage of tests you want to run:
 
-```sh
+```
 Watch Usage
  › Press a to run all tests.
  › Press f to run only failed tests.
@@ -41,7 +41,7 @@ Watch Usage
  › Press Enter to trigger a test run.
 ```
 
-```sh
+```
 Random mode usage
  › Press Esc to exit random mode.
  › Press Enter to randomly run n% of the test suites
