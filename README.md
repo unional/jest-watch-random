@@ -8,7 +8,7 @@
 [![Greenkeeper badge][green-keeper-image]][green-keeper-url]
 [![semantic-release][semantic-release-image]][semantic-release-url]
 
-Loop tests n times.
+Randomly run some of the tests.
 
 Requires `jest@23+`.
 
@@ -22,13 +22,13 @@ add it to the `watchPlugins` section of the Jest configuration:
   "jest": {
     "watchPlugins": [
       "jest-watch-random", // or
-      ["jest-watch-random", { "key": "r", "prompt": "repeat test runs." }]
+      ["jest-watch-random", { "key": "R", "prompt": "randomly pick some tests to run" }]
     ]
   }
 }
 ```
 
-In watch mode, press `r` to invoke a prompt and enter number of times you want the tests to be repeated:
+In watch mode, press `R` to invoke a prompt and enter the percentage of tests you want to run:
 
 ```sh
 Watch Usage
@@ -37,18 +37,16 @@ Watch Usage
  › Press p to filter by a filename regex pattern.
  › Press t to filter by a test name regex pattern.
  › Press q to quit watch mode.
- › Press r to repeat test runs.
+ › Press R to randomly pick some tests to run.
  › Press Enter to trigger a test run.
 ```
 
 ```sh
-Repeat Mode Usage
- › Press Esc to exit repeat mode.
- › Press Enter to repeat test run n times.
- repeat › 3
+Random mode usage
+ › Press Esc to exit random mode.
+ › Press Enter to randomly run n% of the tests
+ random › 10 %
 ```
-
-You can only enter numbers.
 
 [npm-image]: https://img.shields.io/npm/v/jest-watch-random.svg?style=flat
 [npm-url]: https://npmjs.org/package/jest-watch-random
