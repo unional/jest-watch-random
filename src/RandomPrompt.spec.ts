@@ -68,3 +68,20 @@ test('[Esc] rejects', async () => {
 
   return running.then(() => { throw new Error('should not reach') }, () => { })
 })
+
+test('work on second run() as jest will reuse the instance', async () => {
+  const subject = new RandomPrompt(new WritableStream(), new Prompt())
+
+  let running = subject.run()
+  subject.onKey('1')
+  subject.onKey(ENTER)
+
+  expect(await running).toBe(1)
+
+  running = subject.run()
+  subject.onKey('3')
+  subject.onKey('3')
+  subject.onKey(ENTER)
+
+  expect(await running).toBe(33)
+})

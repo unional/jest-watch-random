@@ -16,14 +16,16 @@ export class RandomPrompt {
     else if (key === BACKSPACE) {
       this.input = this.input.slice(0, this.input.length - 1)
     }
-    else if (key === ENTER && Number.parseInt(this.input, 10) > 100) {
-      return
+    else if (key === ENTER) {
+      const inputValue = Number.parseInt(this.input, 10)
+      if (inputValue > 100) return
     }
 
     if (isDigit(key) || key === ESC || key === ENTER || key === BACKSPACE) this.prompt.put(key)
   }
 
   run() {
+    this.input = ''
     this.pipe.write(ansiEscapes.cursorHide);
     this.pipe.write(ansiEscapes.clearScreen);
 
