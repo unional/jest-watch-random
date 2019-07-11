@@ -4,6 +4,7 @@ workflows:
   all:
     jobs:
       - node-latest
+      - node10
       - node9
       - node8
       - release:
@@ -12,12 +13,13 @@ workflows:
               only: master
           requires:
             - node-latest
+            - node10
             - node9
             - node8
 jobs:
   node-latest:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:11
     steps:
       - checkout
       - restore_cache:
@@ -40,6 +42,16 @@ jobs:
           path: reports/junit
   node10:
     docker:
+      - image: 'circleci/node:10'
+    steps:
+      - checkout
+      - attach_workspace:
+          at: '.'
+      - run: yarn verify:ci
+      - store_test_results:
+          path: .reports/junit
+  node9:
+    docker:
       - image: 'circleci/node:9'
     steps:
       - checkout
@@ -60,7 +72,7 @@ jobs:
           path: .reports/junit
   release:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:11
     steps:
       - checkout
       - attach_workspace:
