@@ -44,5 +44,5 @@ node_modules
 typings
 
 # project folders
-dist
 .progress
+lib

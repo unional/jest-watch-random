@@ -1,7 +1,7 @@
 {
   "name": "jest-watch-random",
   "version": "0.0.0-development",
-  "description": "Randomly pick some of the tests to run",
+  "description": "Randomly run some of the tests",
   "keywords": [
     "jest",
     "jest-watch-plugins",
@@ -26,13 +26,14 @@
     "build": "tsc -p tsconfig.base.json",
     "build:watch": "tsc -p tsconfig.base.json -w",
     "coverage": "jest --coverage",
-    "dc": "npm run dependency-check",
+    "dc": "yarn dependency-check",
     "dependency-check": "dependency-check . --unused --no-dev -i jest && dependency-check . --missing --no-dev",
-    "lint": "tslint -p tsconfig.json 'src/**/*.ts'",
-    "test": "npm run build && jest",
-    "verify": "npm run lint && npm run build && npm run coverage && npm run dependency-check",
-    "verify-ci": "npm run lint && npm run build && jest --coverage --config jest.config.ci.json && npm run dependency-check",
-    "watch": "npm run build && jest --watch"
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "verify": "yarn lint && yarn build && yarn coverage && yarn dependency-check",
+    "verify:ci": "yarn lint && yarn build && jest --coverage --config jest.config.ci.json && yarn dependency-check",
+    "watch": "yarn test:watch"
   },
   "dependencies": {
     "ansi-escapes": "^4.2.0",
@@ -45,9 +46,7 @@
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.2",
     "assertron": "^7.1.2",
-    "codecov": "^3.5.0",
     "dependency-check": "^3.4.1",
-    "greenkeeper-lockfile": "^1.15.1",
     "jest": "^24.8.0",
     "jest-audio-reporter": "^2.2.1",
     "jest-junit": "^6.4.0",
