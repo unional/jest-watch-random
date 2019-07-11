@@ -4,9 +4,15 @@ workflows:
   all:
     jobs:
       - node-latest
-      - node10
-      - node9
-      - node8
+      - node10:
+          requires:
+            - node-latest
+      - node9:
+          requires:
+            - node-latest
+      - node8:
+          requires:
+            - node-latest
       - release:
           filters:
             branches:
@@ -37,7 +43,7 @@ jobs:
           paths:
             - node_modules
       - run: yarn verify:ci
-      - run: yarn dlx codecov
+      - run: npx codecov
       - store_test_results:
           path: reports/junit
   node10:
@@ -78,4 +84,4 @@ jobs:
       - attach_workspace:
           at: '.'
       - run: yarn build
-      - run: yarn dlx semantic-release
+      - run: npx semantic-release
