@@ -22,7 +22,7 @@ export class RandomPlugin {
   // Add hooks to Jest lifecycle events
   apply(jestHooks) {
     jestHooks.shouldRunTestSuite(() => {
-      return Math.random() < this.threshold
+      return Math.random() <= this.threshold
     })
   }
 
