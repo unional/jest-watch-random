@@ -4,10 +4,10 @@ workflows:
   all:
     jobs:
       - node-latest
-      - node10:
+      - node11:
           requires:
             - node-latest
-      - node9:
+      - node10:
           requires:
             - node-latest
       - node8:
@@ -19,13 +19,13 @@ workflows:
               only: master
           requires:
             - node-latest
+            - node11
             - node10
-            - node9
             - node8
 jobs:
   node-latest:
     docker:
-      - image: circleci/node:11
+      - image: circleci/node:12
     steps:
       - checkout
       - restore_cache:
@@ -50,9 +50,9 @@ jobs:
       - run: npx codecov
       - store_test_results:
           path: reports/junit
-  node10:
+  node11:
     docker:
-      - image: 'circleci/node:10'
+      - image: 'circleci/node:11'
     steps:
       - checkout
       - attach_workspace:
@@ -60,9 +60,9 @@ jobs:
       - run: yarn verify:ci
       - store_test_results:
           path: .reports/junit
-  node9:
+  node10:
     docker:
-      - image: 'circleci/node:9'
+      - image: 'circleci/node:10'
     steps:
       - checkout
       - attach_workspace:
