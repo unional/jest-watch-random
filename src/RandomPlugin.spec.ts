@@ -4,7 +4,7 @@ import RandomPlugin from '.';
 test(`usage info defaults to 'r', 'repeat test runs'`, () => {
   const subject = new RandomPlugin({ config: {}, stdout: process.stdout })
 
-  t.deepStrictEqual(subject.getUsageInfo(), { key: 'R', prompt: 'randomly pick some tests to run' })
+  t.deepStrictEqual(subject.getUsageInfo(), { key: 'R', prompt: 'randomly pick some test suites to run' })
 })
 
 test('onKey is redirected to prompt', () => {

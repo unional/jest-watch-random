@@ -8,7 +8,7 @@
 [![Greenkeeper badge][green-keeper-image]][green-keeper-url]
 [![semantic-release][semantic-release-image]][semantic-release-url]
 
-Randomly run some of the tests.
+Randomly run some of the test suites (test files).
 
 Requires `jest@23+`.
 
@@ -22,7 +22,7 @@ add it to the `watchPlugins` section of the Jest configuration:
   "jest": {
     "watchPlugins": [
       "jest-watch-random", // or
-      ["jest-watch-random", { "key": "R", "prompt": "randomly pick some tests to run" }]
+      ["jest-watch-random", { "key": "R", "prompt": "randomly pick some test suites to run" }]
     ]
   }
 }

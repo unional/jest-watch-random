@@ -10,19 +10,19 @@ export interface UsageInfo {
 export class RandomPlugin {
   usageInfo: UsageInfo
   prompt: RandomPrompt
-  percentage = 100
+  threshold = 1
   constructor({ stdout, config }: {
     config: Partial<UsageInfo>,
     stdout: any
   }) {
-    this.usageInfo = required({ key: 'R', prompt: 'randomly pick some tests to run' }, config)
+    this.usageInfo = required({ key: 'R', prompt: 'randomly pick some test suites to run' }, config)
     this.prompt = new RandomPrompt(stdout, new Prompt())
   }
 
   // Add hooks to Jest lifecycle events
   apply(jestHooks) {
     jestHooks.shouldRunTestSuite(() => {
-      return Math.random() * 100 < this.percentage
+      return Math.random() < this.threshold
     })
   }
 
@@ -37,7 +37,7 @@ export class RandomPlugin {
   // Executed when the key from `getUsageInfo` is input
   run() {
     return this.prompt.run().then(value => {
-      this.percentage = value
+      this.threshold = value / 100
       return true
     })
   }
