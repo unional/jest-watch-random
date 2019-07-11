@@ -8,7 +8,7 @@
 [![Greenkeeper badge][green-keeper-image]][green-keeper-url]
 [![semantic-release][semantic-release-image]][semantic-release-url]
 
-Randomly run some of the tests.
+Randomly run some of the test suites (test files).
 
 Requires `jest@23+`.
 
@@ -22,7 +22,7 @@ add it to the `watchPlugins` section of the Jest configuration:
   "jest": {
     "watchPlugins": [
       "jest-watch-random", // or
-      ["jest-watch-random", { "key": "R", "prompt": "randomly pick some tests to run" }]
+      ["jest-watch-random", { "key": "R", "prompt": "randomly pick some test suites to run" }]
     ]
   }
 }
@@ -37,14 +37,14 @@ Watch Usage
  › Press p to filter by a filename regex pattern.
  › Press t to filter by a test name regex pattern.
  › Press q to quit watch mode.
- › Press R to randomly pick some tests to run.
+ › Press R to randomly pick some test suites to run.
  › Press Enter to trigger a test run.
 ```
 
 ```sh
 Random mode usage
  › Press Esc to exit random mode.
- › Press Enter to randomly run n% of the tests
+ › Press Enter to randomly run n% of the test suites
  random › 10 %
 ```
 
