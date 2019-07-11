@@ -30,7 +30,7 @@ export class RandomPrompt {
     this.pipe.write(`
 Random mode usage:
  ${chalk.dim(`› Press`)} Esc ${chalk.dim(`to exit random mode.`)}
- ${chalk.dim(`› Press`)} Enter ${chalk.dim(`to randomly run `)}${chalk.yellow('n%')}${chalk.dim(` of the tests`)}
+ ${chalk.dim(`› Press`)} Enter ${chalk.dim(`to randomly run `)}${chalk.yellow('n%')}${chalk.dim(` of the test suites`)}
 `)
 
     printInputLine(this.pipe, '')

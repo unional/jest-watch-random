@@ -37,14 +37,14 @@ Watch Usage
  › Press p to filter by a filename regex pattern.
  › Press t to filter by a test name regex pattern.
  › Press q to quit watch mode.
- › Press R to randomly pick some tests to run.
+ › Press R to randomly pick some test suites to run.
  › Press Enter to trigger a test run.
 ```
 
 ```sh
 Random mode usage
  › Press Esc to exit random mode.
- › Press Enter to randomly run n% of the tests
+ › Press Enter to randomly run n% of the test suites
  random › 10 %
 ```
 
