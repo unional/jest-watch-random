@@ -8,9 +8,25 @@
 [![Greenkeeper badge][green-keeper-image]][green-keeper-url]
 [![semantic-release][semantic-release-image]][semantic-release-url]
 
-Randomly run some of the test suites (test files).
+Randomly run some of the test suites (each test file is a test suite in jest).
 
 Requires `jest@23+`.
+
+## Rationale
+
+What? How dare you only running part of the tests?
+
+Well yeah, in normal circumstances, you should run all of your tests all the time.
+But in practice, when you have a huge suite of tests, it is not practical to do that.
+
+In one of my cases, I have 80k acceptance tests which takes 2 hours to run.
+In most cases, I use a combination of filtering and `test.skip()/test.only()` to focus on the tests that matter.
+
+But from time to time you want to run other tests to make sure you are not breaking anything.
+
+This plugin allows you to do a random spot check to make sure things are working fine.
+
+Of course, you should run a full test at the end of a cycle (end of day / end of sprint / end of release).
 
 ## Usage
 
