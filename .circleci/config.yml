@@ -42,6 +42,10 @@ jobs:
           key: node_modules-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+      - persist_to_workspace:
+          root: '.'
+          paths:
+            - node_modules
       - run: yarn verify:ci
       - run: npx codecov
       - store_test_results:
