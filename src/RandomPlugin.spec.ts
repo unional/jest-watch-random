@@ -1,4 +1,4 @@
-import t from 'assert'
+import t from 'assert';
 import RandomPlugin from '.';
 
 test(`usage info defaults to 'r', 'repeat test runs'`, () => {
