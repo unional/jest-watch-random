@@ -49,7 +49,7 @@
     "dependency-check": "^3.4.1",
     "jest": "^24.8.0",
     "jest-audio-reporter": "^2.2.1",
-    "jest-junit": "^6.4.0",
+    "jest-junit": "^9.0.0",
     "jest-watch-repeat": "^1.0.4",
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-toggle-config": "^1.0.2",
