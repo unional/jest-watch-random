@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/ansi-escapes": "^4.0.0",
     "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.2",
+    "@types/node": "^12.12.3",
     "assertron": "^7.1.2",
     "dependency-check": "^3.4.1",
     "jest": "^24.8.0",
